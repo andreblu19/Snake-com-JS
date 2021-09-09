@@ -1,3 +1,4 @@
+let pontos = 0;
 let canvas = document.getElementById("snake");
 let context = canvas.getContext("2d");
 let box = 32;
@@ -85,6 +86,8 @@ function iniciarJogo() {
     }else {
         food.x = Math.floor(Math.random() * 15 + 1) * box;
         food.y = Math.floor(Math.random() * 15 + 1) * box;
+        pontos++;
+        document.querySelector("#ponto").innerHTML = pontos;
     }
 
 
@@ -97,3 +100,7 @@ function iniciarJogo() {
 }
 
 let jogo = setInterval(iniciarJogo, 100);
+
+function restart(){
+   location.reload(true);
+}
